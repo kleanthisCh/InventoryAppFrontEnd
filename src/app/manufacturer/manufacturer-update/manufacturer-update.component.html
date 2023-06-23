@@ -1,0 +1,35 @@
+<div *ngIf="loading" class="mt-2 row alert alert-info">
+    Loading Manufacturers ...
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only"></span>
+    </div>
+</div>
+
+<div *ngIf='manufacturersList.length'>
+    <table class="table table-stripped">
+        <thead>
+            <th scope='col'>
+                <button class="btn  btn-sm" (click)="toggleSort('manufacturerId')">Manufacturer_Id</button>
+            </th>
+            <th scope='col'>
+                <button class="btn  btn-sm" (click)="toggleSort('manufacturerName')">Manufacturer_Name</button>
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mnfr of manufacturersList">
+                <td>
+                    {{mnfr.manufacturerId}}
+                </td>
+                <td>
+                    {{mnfr.manufacturerName}}
+                </td>
+                <td>
+                    <button class="btn btn-success btn-sm" (click)="onUpdate(mnfr.manufacturerId,mnfr.manufacturerName)">Update</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger btn-sm" (click)="onDelete(mnfr.manufacturerId)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

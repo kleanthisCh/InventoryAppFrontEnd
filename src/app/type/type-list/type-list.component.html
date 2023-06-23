@@ -1,0 +1,30 @@
+<div *ngIf="loading" class="mt-2 row alert alert-info">
+    Loading Types ...
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only"></span>
+    </div>
+</div>
+
+<div *ngIf='typesList.length'>
+    <table class="table table-stripped">
+        <thead>
+            <th scope='col'>
+                <button class="btn  btn-sm" (click)="toggleSort('typeId')">Type Id</button>
+            </th>
+            <th scope='col'>
+                <button class="btn  btn-sm" (click)="toggleSort('typeDescription')">Type Description</button>
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tp of typesList">
+                <td>
+                    {{tp.typeId}}
+                </td>
+                <td>
+                    {{tp.typeDescription}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,13 @@
+<h2>Gender Form</h2>
+<h3> Gender Id: {{genderId}} - Gender Description: {{oldDescription}}</h3>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="genderDescription" class="form-label">New Gender Description</label>
+        <input type="text" class="form-control" id="genderDescription" formControlName="genderDescription" />
+    </div>
+
+
+    <button type="submit" class="btn btn-success" [disabled]="!form.valid">
+        Submit
+    </button>
+</form>

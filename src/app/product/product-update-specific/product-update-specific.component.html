@@ -1,0 +1,45 @@
+<h2>Product Update Form</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h3> Model: {{model}} </h3>
+    <div class="mb-3">
+        <label for="model" class="form-label">Model</label>
+        <input type="text" class="form-control" id="model" formControlName="model" />
+    </div>
+    <h3> Gender Id: {{genderId}} - Gender Description: {{genderDescription}}</h3>
+    <div class="mb-3">
+        <label for="genderId" class="form-label">Gender Id</label>
+        <select class="form-select" aria-label="Gender Id" formControlName="genderId">
+            <option *ngFor="let gender of genders" [value]="gender.genderId">{{gender.genderId}} -
+                {{gender.genderDescription}}</option>
+
+        </select>
+    </div>
+    <h3> Type Id: {{typeId}} - Type Description: {{typeDescription}}</h3>
+    <div class="mb-3">
+        <label for="typeId" class="form-label">Type Id</label>
+        <select class="form-select" aria-label="Type Id" formControlName="typeId">
+            <option *ngFor="let type of types" [value]="type.typeId">{{type.typeId}} -
+                {{type.typeDescription}}</option>
+
+        </select>
+    </div>
+    <h3> Manufacturer Id: {{manufacturerId}} - Manufacturer Name: {{manufacturerName}}</h3>
+    <div class="mb-3">
+        <label for="manufacturerId" class="form-label">Manufacturer Id</label>
+        <select class="form-select" aria-label="Manufacturer Id" formControlName="manufacturerId">
+            <option *ngFor="let mnfr of mnfrs" [value]="mnfr.manufacturerId">{{mnfr.manufacturerId}} -
+                {{mnfr.manufacturerName}}</option>
+
+        </select>
+    </div>
+    <h3> Description :{{oldDescription}}</h3>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" id="description" formControlName="description" />
+    </div>
+
+
+    <button type="submit" class="btn btn-success">
+        Submit
+    </button>
+</form>

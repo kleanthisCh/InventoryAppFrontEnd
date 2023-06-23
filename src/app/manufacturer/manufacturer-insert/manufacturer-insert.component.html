@@ -1,0 +1,12 @@
+<h2>Manufacturer Form</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="manufacturername" class="form-label">Manufacturer Name</label>
+        <input type="text" class="form-control" id="manufacturername" formControlName="manufacturername" />
+    </div>
+    
+
+    <button type="submit" class="btn btn-success" [disabled]="!form.valid">
+        Submit
+    </button>
+</form>

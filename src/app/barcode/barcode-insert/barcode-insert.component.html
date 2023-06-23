@@ -1,0 +1,28 @@
+<h2>Barcode Form</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="barcodeId" class="form-label">Barcode</label>
+        <input type="text" class="form-control" id="barcodeId" formControlName="barcodeId" />
+    </div>
+    <div class="mb-3">
+        <label for="productId" class="form-label">Product Id</label>
+        <select class="form-select" aria-label="Product Id" formControlName="productId">
+            <option *ngFor="let product of products" [value]="product.productId">{{product.productId}} -
+                {{product.model}}</option>
+
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="size" class="form-label">Size</label>
+        <input type="text" class="form-control" id="size" formControlName="size" />
+    </div>
+    <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input type="text" class="form-control" id="quantity" formControlName="quantity" />
+    </div>
+
+
+    <button type="submit" class="btn btn-success">
+        Submit
+    </button>
+</form>

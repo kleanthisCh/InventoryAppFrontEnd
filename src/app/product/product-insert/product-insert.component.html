@@ -1,0 +1,74 @@
+<h2>Product Form</h2>
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="model" class="form-label">Model</label>
+            <input type="text" class="form-control" id="model" formControlName="model" />
+        </div>
+        <div class="mb-3">
+            <label for="genderId" class="form-label">Gender Id</label>
+            <select class="form-select" aria-label="Gender Id" formControlName="genderId">
+                <option *ngFor="let gender of genders" [value]="gender.genderId">{{gender.genderId}} - {{gender.genderDescription}}</option>
+                
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="typeId" class="form-label">Type Id</label>
+            <select class="form-select" aria-label="Type Id" formControlName="typeId">
+                <option *ngFor="let type of types" [value]="type.typeId">{{type.typeId}} -
+                    {{type.typeDescription}}</option>
+        
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="manufacturerId" class="form-label">Manufacturer Id</label>
+            <select class="form-select" aria-label="Manufacturer Id" formControlName="manufacturerId">
+                <option *ngFor="let mnfr of mnfrs" [value]="mnfr.manufacturerId">{{mnfr.manufacturerId}} -
+                    {{mnfr.manufacturerName}}</option>
+        
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" id="description" formControlName="description" />
+        </div>
+
+        
+        
+
+        <button type="submit" class="btn btn-success" >
+            Submit
+        </button>
+    </form>
+</div>
+
+
+<div class="container mt-5 border border-info">
+    <form [formGroup]="formbcr" (ngSubmit)="onSubmitbcr()">
+        <div class="mb-3">
+            <label for="barcodeId" class="form-label">Barcode</label>
+            <input type="text" class="form-control" id="barcodeId" formControlName="barcodeId" />
+        </div>
+        <div class="mb-3">
+            <label for="productId" class="form-label">Product Id</label>
+            <input type="text" class="form-control" id="productId" formControlName="productId" />
+        </div>
+        <div class="mb-3">
+            <label for="model" class="form-label">Model</label>
+            <input type="text" class="form-control" id="model" formControlName="model" />
+        </div>
+        <div class="mb-3">
+            <label for="size" class="form-label">Size</label>
+            <input type="text" class="form-control" id="size" formControlName="size" />
+        </div>
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="text" class="form-control" id="quantity" formControlName="quantity" />
+        </div>
+        
+        
+        <button type="submit" class="btn btn-success mb-3">
+            Submit
+        </button>
+    </form>
+</div>

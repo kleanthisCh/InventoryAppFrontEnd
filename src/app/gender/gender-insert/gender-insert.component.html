@@ -1,0 +1,12 @@
+<h2>Gender Form</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="genderDescription" class="form-label">Gender Description</label>
+        <input type="text" class="form-control" id="genderDescription" formControlName="genderDescription" />
+    </div>
+
+
+    <button type="submit" class="btn btn-success" [disabled]="!form.valid">
+        Submit
+    </button>
+</form>

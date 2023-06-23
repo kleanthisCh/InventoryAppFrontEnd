@@ -1,0 +1,35 @@
+<div *ngIf="loading" class="mt-2 row alert alert-info">
+    Loading Genders ...
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only"></span>
+    </div>
+</div>
+
+<div *ngIf='gendersList.length'>
+    <table class="table table-stripped">
+        <thead>
+            <th scope='col'>
+                <button class="btn  btn-sm" (click)="toggleSort('genderId')">Gender Id</button>
+            </th>
+            <th scope='col'>
+                <button class="btn  btn-sm" (click)="toggleSort('genderDescription')">Gender Description</button>
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let gndr of gendersList">
+                <td>
+                    {{gndr.genderId}}
+                </td>
+                <td>
+                    {{gndr.genderDescription}}
+                </td>
+                <td>
+                    <button class="btn btn-success btn-sm" (click)="onUpdate(gndr.genderId,gndr.genderDescription)">Update</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger btn-sm" (click)="onDelete(gndr.genderId)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

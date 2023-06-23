@@ -1,0 +1,13 @@
+<h2>Type Form</h2>
+<h3> Type Id: {{typeId}} - Type Description: {{oldDescription}}</h3>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="typeDescription" class="form-label">New Type Description</label>
+        <input type="text" class="form-control" id="typeDescription" formControlName="typeDescription" />
+    </div>
+
+
+    <button type="submit" class="btn btn-success" [disabled]="!form.valid">
+        Submit
+    </button>
+</form>

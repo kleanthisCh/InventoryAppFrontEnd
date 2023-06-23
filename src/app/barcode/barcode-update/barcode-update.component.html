@@ -1,0 +1,53 @@
+<div *ngIf="loading" class="mt-2 row alert alert-info">
+    Loading Barcodes ...
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only"></span>
+    </div>
+</div>
+
+<div *ngIf='barcodesList.length'>
+    <table class="table table-stripped">
+        <thead>
+            <th scope='col'>
+                <button class="btn  btn-sm" (click)="toggleSort('productId')">Product Id</button>
+            </th>
+            <th scope='col'>
+                Model
+            </th>
+            <th scope='col'>
+                Barcode Id
+            </th>
+            <th scope='col'>
+                Size
+            </th>
+            <th scope='col'>
+                Quantity
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bcr of barcodesList">
+                <td>
+                    {{bcr.productId}}
+                </td>
+                <td>
+                    {{bcr.model}}
+                </td>
+                <td>
+                    <strong>{{bcr.barcodeId}}</strong>
+                </td>
+                <td>
+                    {{bcr.size}}
+                </td>
+                <td>
+                   <strong>{{bcr.quantity}}</strong> 
+                </td>
+                <td>
+                    <button class="btn btn-success btn-sm" (click)="onUpdate(bcr.barcodeId,bcr.model,bcr.productId,bcr.size,bcr.quantity)">Update</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger btn-sm" (click)="onDelete(bcr.barcodeId)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
